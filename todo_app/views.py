@@ -11,7 +11,7 @@ def todo_list(request):
     todos = Todo.objects.all()   #queryset
     return render(
         request,
-        "todo_list.html",
+        "bootstrap/todo_list.html",
         {"todos": todos},
     )
     
@@ -25,7 +25,7 @@ def todo_delete(request, id):
 def todo_create(request):
     # print(request.method, request.POST)
     if request.method == "GET":
-        return render(request, "todo_create.html")
+        return render(request, "bootstrap/todo_create.html")
     else:
         title = request.POST["title"]
         Todo.objects.create(title=title)
