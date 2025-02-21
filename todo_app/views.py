@@ -34,7 +34,7 @@ def todo_create(request):
 def todo_update(request, id):
     if request.method == "GET":
         todo = Todo.objects.get(id=id)
-        return render(request, "todo_update.html", {"todo": todo})
+        return render(request, "bootstrap/todo_update.html", {"todo": todo})
     else:
         todo = Todo.objects.get(id=id)
         todo.title = request.POST["title"]
